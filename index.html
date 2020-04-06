@@ -174,7 +174,9 @@
       
         <p>应用css样式：<strong>外部样式表</strong>&nbsp;<strong>内部样式表</strong>&nbsp;<strong>内联样式表</strong><br>1.外部样式表:通过新建.css文件，在&lt;head&gt;&lt;/head&gt;里外部引用.css，用法:&lt;link rel=”stylesheet”&nbsp;type=”text/css”&nbsp;href=”__.css”&gt;</p>
 <hr>
-<h2 id="2-内部样式表-在-lt-head-gt-lt-head-gt-里应用css样式，用法-lt-style-nbsp-type-”text-css”-gt-此处输入内容-lt-style-gt"><a href="#2-内部样式表-在-lt-head-gt-lt-head-gt-里应用css样式，用法-lt-style-nbsp-type-”text-css”-gt-此处输入内容-lt-style-gt" class="headerlink" title="2.内部样式表:在&lt;head&gt;&lt;/head&gt;里应用css样式，用法:&lt;style&nbsp;type=”text/css”&gt;此处输入内容&lt;/style&gt;"></a>2.内部样式表:在&lt;head&gt;&lt;/head&gt;里应用css样式，用法:&lt;style&nbsp;type=”text/css”&gt;此处输入内容&lt;/style&gt;</h2><p>3.内联样式表:直接在&lt;body&gt;&lt;/body&gt;中的标签内使用，用法:&lt;p&nbsp;style=”color:<strong>;font-size:</strong>;”&gt;Hello&nbsp;World!&lt;/p&gt;意思是给p标签添加颜色，字号样式</p>
+<p>2.内部样式表:在&lt;head&gt;&lt;/head&gt;里应用css样式，用法:&lt;style&nbsp;type=”text/css”&gt;此处输入内容&lt;/style&gt;</p>
+<hr>
+<p>3.内联样式表:直接在&lt;body&gt;&lt;/body&gt;中的标签内使用，用法:&lt;p&nbsp;style=”color:<strong>;font-size:</strong>;”&gt;Hello&nbsp;World!&lt;/p&gt;意思是给p标签添加颜色，字号样式</p>
 
       
 
@@ -242,7 +244,15 @@
 <p>C语言的发展-1972年在B语言的基础上设计出了C语言，最初的C语言只是为描述和实现UNIX操作系统提供一种工作语言而设计的。1989年，ANSI公布C89完整C语言标准，2004年，ISO对C89进行扩充到C99。</p>
 <h3 id="C语言特点"><a href="#C语言特点" class="headerlink" title="C语言特点"></a>C语言特点</h3><p>1.语言简洁、紧凑、使用方便、灵活<br>2.运算符丰富 初等运算符&gt;单目运算符&gt;算术运算符&gt;移位运算符&gt;关系运算符&gt;逻辑运算符&gt;条件运算符&gt;赋值运算符<br>3.数据类型丰富(整型，实型(包含单精度浮点型和双精度浮点型)，字符型，枚举类型，数组类型，结构体类型，共用体类型，指针类型，空类型void)<br>4.具有结构化的控制语句(if..else，while，do…while，switch，for)<br>5.语法限制不太严格，程序设计自由度大<br>6.允许直接访问物理地址，能进行位操作，能实现汇编语言的大部分功能，可以直接对硬件进行操作(C是底层语言)<br>7.编写的程序可移植性好<br>8.生成目标代码质量高，程序执行效率高</p>
 <hr>
-<p>C语言由预处理命令。全局声明，函数定义构成</p>
+<h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h4><p>只能由下划线，数字0-9,26个大小写英文字母(a-z,A-Z)构成,并且构成的标识符只能下划线或字母开头，不能使用数字，对大小写敏感，大小写不同，标识符也不同，不能使用关键字</p>
+<hr>
+<h4 id="整型常量"><a href="#整型常量" class="headerlink" title="整型常量"></a>整型常量</h4><p>常量是不会改变的量，C语言默认的是十进制数，存储的都是补码，在数字开头加0表示八进制，加0b表示二进制，加0x表示十六进制。</p>
+<h4 id="实型常量"><a href="#实型常量" class="headerlink" title="实型常量"></a>实型常量</h4><p>只能用十进制表示，不能使用八进制或十六进制或二进制。(小数形式.和指数形式e/E，e/E前后必须有数字，前面无要求，后面一定是整数，)</p>
+<h4 id="字符常量"><a href="#字符常量" class="headerlink" title="字符常量"></a>字符常量</h4><p>由一对单引号括起来的单个字符构成，占一个字节，一个转义字符占一个字节</p>
+<h4 id="字符串常量"><a href="#字符串常量" class="headerlink" title="字符串常量"></a>字符串常量</h4><p>由一对双引号括起来的字符序列组成，字符串常量占的内存字节数比字符常量多1个字节，因为字符串常量多一个‘/0’</p>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>变量是存储数据的地方。变量初始化：变量名=初始值；在变量声明的地方赋值叫做初始化，在程序中叫做赋值。若定义的多个变量赋相同的值，不能采用连续赋初值的形式，应分别赋值。</p>
+<hr>
+<p>1.算术运算符：%仅用于整型变量过整型常量的运算，取余，余数的符号与被除数相同，+-<em>/的两个操作数既可以是整数也可以是实数，若两个操作数均为整数，结果也为整数；若其中一个是实数，则结果是double类型，因为实型比整型高级。当两个数相除，一个为负数，则摄入的方向是不固定的，每个机器给的值会不一样，多数采用<strong><em>向零取整</em></strong><br>2.自增自减运算符：只能对变量操作，不能是常量或表达式<br>3.赋值运算符=：赋值表达式：变量名=表达式；=和==不同，=是赋值，==是相等，一般用于判断语句if(),for(),while()<br>4.复合赋值运算符：+=，-=，</em>=，/=，%=…<br>5.位运算：按位运算&amp;与,|或,^异或,~非</p>
 
       
 
